@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image'
 import Link from "next/link"
   import {useSelector} from "react-redux"
 const Navbar = () => {
@@ -34,7 +35,7 @@ const CartLength = useSelector(state =>state.cart)
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjRzkEEVtiPqqpsIeWxJzt-6pieZh0gl5wWncL3yQA1XDIZKWtEcYwAvp5qwbMnDWOAQI&usqp=CAU" />
+          <Image width={200} height={200} src="next.svg" alt="avatar" />
         </div>
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">

@@ -1,9 +1,10 @@
 "use client"
+import Image from 'next/image'
 import {useSelector} from "react-redux"
 import { remove } from "@/Store/CartSlice"
 import { useDispatch } from "react-redux"
 import Navbar from "@/components/Navbar"
-const cart = () => {
+const Cart = () => {
   const CartProducts = useSelector(state =>state.cart)
  const dispatch =useDispatch()
  const RemoveToCart =(id)=>{
@@ -21,7 +22,7 @@ const cart = () => {
         return(
           <div key={prod.id} className="container flex justify-center p-4 ">
            <div className=" card card-compact  bg-base-100  shadow-xl flex flex-row p-4">
-  <figure><img className='w-32' src={prod.image} alt="Shoes" /></figure>
+  <figure><Image className='w-32' width={500} height={500} src={prod.image} alt="Shoes" /></figure>
   <div className="card-body flex flex-row gap-4 items-center">
     <h2 className="card-title">{prod.title}</h2>
     
@@ -40,4 +41,4 @@ const cart = () => {
   )
 }
 
-export default cart
+export default Cart

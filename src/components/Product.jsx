@@ -1,5 +1,6 @@
 "use client"
-import React from 'react'
+
+import Image from 'next/image'
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +15,7 @@ const Product = () => {
 useEffect(()=>{
 dispatch(getProduct())
 // fetch("https://fakestoreapi.com/products").then((res)=>res.json()).then((data)=>setProduct(data))
-},[])
+})
 // console.log(product)
 const addToCart =(prod)=>{
 dispatch(add(prod))
@@ -28,7 +29,7 @@ dispatch(add(prod))
         return(
           <div key={prod.id} className="flex  mb-4">
            <div className=" card w-96  shadow-xl">
-  <figure><img className='w-1/3' src={prod.image} alt="Shoes" /></figure>
+  <figure><Image className='w-1/3' width={500} height={500} src={prod.image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{prod.title}</h2>
     <p className='gr'>{prod.description}</p>
